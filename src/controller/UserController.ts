@@ -3,8 +3,10 @@ import {Controller} from "./Controller";
 import {UserService} from "../Services/UserService";
 
 export class UserController extends Controller {
-    constructor(private service: UserService) {
+    protected service: UserService;
+    constructor(service: UserService) {
         super();
+        this.service = service;
     }
 
     async create(req: Request, res: Response): Promise<void> {

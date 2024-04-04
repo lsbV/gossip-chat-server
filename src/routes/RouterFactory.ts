@@ -1,5 +1,4 @@
 import {Express, Router} from "express";
-import {ServiceFactory} from "../Services/ServiceFactory";
 import {User} from "../models/User";
 import {UserController} from "../controller/UserController";
 import {createUserRouter} from "./userRouter";

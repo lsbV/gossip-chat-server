@@ -1,5 +1,4 @@
-import Mongoose, {Model, Types} from 'mongoose';
-import ObjectId = Types.ObjectId;
+import Mongoose from 'mongoose';
 import {User} from "../User";
 
 const Schema = Mongoose.Schema;
@@ -8,7 +7,7 @@ const UserSchema = new Schema({
         type: String,
         required: true,
     },
-    login: {
+    username: {
         type: String,
         required: true,
     },
@@ -18,20 +17,27 @@ const UserSchema = new Schema({
     },
     avatar: {
         type: String,
-        required: true,
+        required: false,
+        default: "./assets/images/default-avatar.png"
+    },
+    token: {
+        type: String,
+        required: false,
+        default: null
     },
     createdAt: {
-        type: Date,
+        type: Number,
         default: Date.now,
     },
     updatedAt: {
-        type: Date,
+        type: Number,
         default: null,
     },
     deletedAt: {
-        type: Date,
+        type: Number,
         default: null,
-    },
+    }
+
 });
 
-export const MongooseUser:Model<any> = Mongoose.model(User.name, UserSchema);
+export const MongooseUser = Mongoose.model(User.name, UserSchema);

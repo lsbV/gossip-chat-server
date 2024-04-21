@@ -1,12 +1,15 @@
 import {Entity} from "./Entity";
 
-export class Chat extends Entity{
+export abstract class Chat extends Entity {
 
-    public constructor(id: string,
-                       createdAt: number = Date.now(),
-                       updatedAt: Date | null = null,
-                       deletedAt: Date | null = null
+    protected constructor(id: string | undefined,
+                          createdAt: number = Date.now(),
+                          updatedAt: number | null = null,
+                          deletedAt: number | null = null
     ) {
         super(id, createdAt, updatedAt, deletedAt);
     }
+
+    public abstract containsUser(userId: string): boolean;
+
 }

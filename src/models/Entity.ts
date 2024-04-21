@@ -1,8 +1,8 @@
 export abstract class Entity {
     protected constructor(
-        public id: string | null = null,
+        public id: string | undefined = undefined,
         public createdAt: number = Date.now(),
-        public updatedAt: Date | null = null,
-        public deletedAt: Date | null = null) {
+        public updatedAt: number | null = null,
+        public deletedAt: number | null = null) {
     }
 }

@@ -3,13 +3,14 @@ import {Entity} from "./Entity";
 export class User extends Entity{
 
     constructor(public name: string,
-                public login: string,
+                public username: string,
                 public password: string,
                 public avatar: string,
-                public id: string | undefined = undefined,
-                public createdAt: number = Date.now(),
-                public updatedAt: Date | null = null,
-                public deletedAt: Date | null = null
+                public token: string,
+                id: string | undefined = undefined,
+                createdAt: number = Date.now(),
+                updatedAt: number | null = null,
+                deletedAt: number | null = null
     ) {
         super(id, createdAt, updatedAt, deletedAt);
     }
